@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label "jenkins"
+        }
+    }
 
     stages {
         stage('Build') {
@@ -10,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh "sleep 10"
             }
         }
         stage('Deploy') {
