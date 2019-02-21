@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage ("PrintEnv") {
+            steps {
+                sh "printenv"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
